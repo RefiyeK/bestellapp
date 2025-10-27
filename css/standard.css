@@ -12,13 +12,9 @@ body {
     flex-direction: column;
     font-family: var(--font_text);
 }
-main {
-    flex: 1;
-    background-color: white;
-}
 
 .container_limit {
-    max-width: 1920px; 
+    max-width: 1440px; 
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 30px;
 }

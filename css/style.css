@@ -1,7 +1,7 @@
 :root {
     --primary-color: #2E8B57;    /* Yemek yeşili - Ana renk */
     --secondary-color: #FF6B35;  /* Turuncu - Aksiyon butonları */
-    --primary-color: #2C3E50;    /* Lacivert - Profesyonel */
+    --accent-color: #2C3E50;    /* Lacivert - Profesyonel */
     --font_headline: 'Merriweather', sans-serif;
     --font_text: 'OpenSans', sans-serif;
 }
@@ -36,34 +36,142 @@
 
 header {
     background-color: var(--secondary-color) ;
-    height: 100px; 
+    height: 120px;
+    width: 100%; 
 }
 
+section {
+    position: relative;
+    margin-bottom: 40px;
+}
 .logo {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
-    display: flex;
-    align-items: center;    
+     
 }
 
-.hero {
-    background-image: url(../assets/img/ai-generated-8711272_1920.jpg);
-    height: 600px;
-    background-size: cover;
-    background-position: center;
+.hero_img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
 }
 
 .hero_logo {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    border-radius: 70px;
+    height: 180px;
+    left: 50px;
+    position: absolute;
+    border-radius: 100px;
+    bottom: 0;
+    left: 50%;
 }
 
+.navi {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-color);
+    font-family: var(--font_headline);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navi:hover {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline 2px solid;
+    text-underline-offset: 6px;
+    transform: scale(1.125);
+    z-index: 10;
+    position: relative;
+}
+
+.nav_flex {
+   display: flex;
+   align-items: flex-end;
+   justify-content: flex-end;
+   gap: 20px;
+   padding-bottom: 10px;
+}
+
+.navi_box {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.restaurant_info {
+    gap: 15px;
+}
+
+.flex_wrapper {
+    display: flex;
+
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+main {
+    width: 75%;
+    flex: 3;
+    margin-right: 30px;
+    background-color: white;
+}
+
+aside {
+    width: 25%;
+    height: 100%;
+    flex: 1;
+    border: 7px solid var(--secondary-color);
+}
 
 footer {
     background-color: var(--secondary-color);
-    height: 100px;
+    height: 120px;
+    width: 100%;
 }
 
+.footer_flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social_media {
+    width: 35px;
+    height: 35px;
+    padding: 0 10px;
+    object-fit: contain;
+}
+
+.social_media:hover {
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 4px white);   
+}
+
+.social_media_group {
+    gap: 50px;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-color);
+    font-family: var(--font_headline);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.link:hover {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline 2px solid;
+    text-underline-offset: 6px;
+    transform: scale(1.125);
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+}
