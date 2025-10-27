@@ -10,13 +10,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: var(--creamwhite);
-    color: var(--darkblue);
     font-family: var(--font_text);
 }
 main {
     flex: 1;
-    background-color: var(--creamwhite);
+    background-color: white;
 }
 
 .container_limit {
