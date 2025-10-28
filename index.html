@@ -6,12 +6,12 @@
     <title>Bestell App</title>
     <link rel="icon" size="32x32" href="./assets/Favicon/favicon-32x32.png">
     <script src="./js/data.js" defer></script>
-    <script src="./js/script.js" defer></script>
     <script src="./js/templates.js" defer></script>
+    <script src="./js/script.js" defer></script>
     <link rel="stylesheet" href="./css/standard.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body onload="init()">
     <header>
         <section class="container_limit">
             <div class="navi_box">               
@@ -29,21 +29,14 @@
             <img class="hero_img" src="./assets/img/pizza-napolitana.jpg" alt="Hero Bild">
             <img  class="hero_logo" src="./assets/Logo/Heiße Ecke.png" alt="Bestell App Logo">
                 <div class="container_limit">  
-                    <div class="restaurant_info">
-                        <h2>Pizza Fuchs</h2>
-                        <p> Bewertung</p>
-                    </div>
+                    <div id="restaurant_info" class="restaurant_info"></div>
                 </div>    
         </section>
 
      <section class="main_aside">
         <div class="flex_wrapper">
-            <main>
-                <h2>Dishes</h2>
-                <p>Essen</p>
-                <p>Essen</p>
-                <p>Essen</p>
-                <p>Essen</p>
+            <main id="menu_container">
+            
             </main>
             <aside>
                 <h2>Warenkorb</h2>

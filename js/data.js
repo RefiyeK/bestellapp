@@ -1,12 +1,12 @@
 const restaurant = {
-    name : "Restaurant ismi",
+    name : "Heiße Ecke",
     logo : "logo.png",
-    rating : 4.7,
+    rating : 4.5,
     deliveryCost : 3.50
 };
 
 
-const dishes = [
+const menu = [
     {
         "name": "Pizza Margherita",
         "category": "Pizza",
