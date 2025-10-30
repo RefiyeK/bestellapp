@@ -63,4 +63,4 @@ const menu = [
     }
 ];
 
-const basket = [];
+let basket = [];

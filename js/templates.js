@@ -1,8 +1,5 @@
-//Template für Restaurant Informationen
-function getRestaurantInfoTemplate(name, rating, deliveryCost){
-    const stars = getStarRating(rating);
-
-    return `
+function getRestaurantInfoTemplate(name, rating, deliveryCost, stars){
+    return`
         <h2 class="restaurant_name">${name}</h2>
         <div class="rating">
             ${stars} <span class="rating-number">(${rating})</span>
@@ -12,13 +9,11 @@ function getRestaurantInfoTemplate(name, rating, deliveryCost){
 }
 
 
-//Hilffunktion für Sterne
 function getStarRating(rating){
     const fullStars = Math.round(rating);
         let stars = '';
-
         for (let i = 0; i < fullStars; i++){
-            stars = stars + '⭐';
+            stars += '⭐';
         }
     return stars;
 }
@@ -38,15 +33,12 @@ function getDishTemplate(name, description, price, index) {
 }
 
 
-function getCartItemTemplate(dishIndex, amount) {
-    const dish = menu[dishIndex]; //Hole das Gericht aus dem Menu
-    const itemTotal = dish.price * amount; //Berechne zwischensumme
-
+function getCartItemTemplate(dishName, price, amount, itemTotal, dishIndex) {
     return `
         <div class="cart_item">
                     <div class="cart_item_info">
-                        <h4>${dish.name}</h4>
-                        <p class="cart_item_price">${dish.price.toFixed(2)} €</p>
+                        <h4>${dishName}</h4>
+                        <p class="cart_item_price">${price.toFixed(2)} €</p>
                     </div>
                     <div class="cart_item_controls">
                         <button class="cursor" onclick="decreaseAmount(${dishIndex})">-</button>
@@ -60,12 +52,11 @@ function getCartItemTemplate(dishIndex, amount) {
 }
 
 
-//Leeren Warenkorb
 function getEmptyCartTemplate(){
     return `
         <div class="empty_cart">
-            <h2>Warenkorb</h2>
-            <p>🛒 Dein Warenkorb ist leer</p>
+            <h2 class="cart_header">Warenkorb</h2>
+            <p>Dein Warenkorb ist leer</p>
             <p class="empty_cart_hint">Füge Gerichte hinzu!</p>
         </div>
     `;
@@ -87,7 +78,7 @@ function getCartSummaryTemplate(subtotal, deliveryCost, total){
                 <strong>GESAMT:</strong>
                 <strong>${total.toFixed(2)} €</strong>
             </div>
-            <button class="btn_order" onclick="placeOrder()">Bestellen 🛒</button>
+            <button class="btn_order" onclick="placeOrder()">BESTELLEN</button>
         </div>
     `;
 }
