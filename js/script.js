@@ -92,6 +92,7 @@ function addToCart(dishIndex) {
         basket[foundIndex].amount++; 
     }
     renderCart();
+    updateCartCount();
 }
 
 
@@ -115,12 +116,18 @@ function renderCart() {
     if (basket.length === 0) {//Warenkorb ist leer
         cartElement.innerHTML = getEmptyCartTemplate();
     } else {
-        let cartHTML = '<h2>Warenkorb</h2>';
+        showTotalCart(cartElement);
+    }   
+}
+
+
+function showTotalCart(cartElement){
+    let cartHTML = '<h2>Warenkorb</h2>';
 
         //Alle Items rendern
         for (let i = 0; i < basket.length; i++) {
             const item = basket[i];
-            cartHTML += getCartItemTempalate(item.dishIndex, item.amount);
+            cartHTML += getCartItemTemplate(item.dishIndex, item.amount);
     }
 
     //Summen berechnen
@@ -133,7 +140,6 @@ function renderCart() {
 
     //HTML einfügen
     cartElement.innerHTML = cartHTML;
-    }   
 }
 
 
@@ -145,6 +151,8 @@ function increaseAmount(dishIndex){
         }
     }
     renderCart();
+    renderCartModal();
+    updateCartCount();
 }
 
 
@@ -161,6 +169,8 @@ function decreaseAmount(dishIndex) {
         }
     }
     renderCart();
+    renderCartModal();
+    updateCartCount();
 }
 
 
@@ -173,16 +183,18 @@ function removeFromCart(dishIndex){
         }
     }
     renderCart();
+    renderCartModal();
+    updateCartCount();
 }
 
 
 function showMessage(text, type) {
-    const messageContainer = document.getElementById('message_container');
+    const messageContainer = document.getElementById('message-container');
     messageContainer.textContent = text;
     messageContainer.className = `message ${type}`;
 
     setTimeout(function() {
-        messageContainer.className = `message hidden`;
+        messageContainer.className = "message_hidden";
     }, 3000);
 }
 
@@ -199,10 +211,79 @@ function placeOrder() { //Prüfe ob Warenkorb leer ist
     basket.length = 0; //Warenkorb leeren / Setzt Array-Länge auf 0
 
     renderCart(); //Warenkorb neu anzeigen
+    renderCartModal();
+    updateCartCount();
+    closeCartModal();
 }
 
 
+function openCartModal() {
+    const modal = document.getElementById('cart-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('visible');
+    renderCartModal();
+}
 
+function closeCartModal() {
+    const modal = document.getElementById('cart-modal');
+    modal.classList.remove('visible');
+    modal.classList.add('hidden');
+}
+
+
+function renderCartModal() {
+    const modalBody = document.getElementById('cart-modal-body');
+
+    if (basket.lenght === 0) {
+        modalBody.innerHTML = getEmptyCartTemplate();
+    } else {
+        showTotalCartModal(modalBody);
+    }
+}
+
+
+function showTotalCartModal(modalBody) {
+       
+        let cartHTML = '';
+
+        for (let i = 0; i < basket.lenght; i++) {
+            const item = basket[i];
+            cartHTML += getCartItemTemplate(item.dishIndex, item.amount);
+        }
+
+        const subtotal = calculateSubtotal();
+        const deliveryCost = restaurant.delivery_cost;
+        const total = subtotal + deliveryCost;
+
+        cartHTML += getCartSummaryTemplate(subtotal, deliveryCost, total);
+
+        modalBody.innerHTML = cartHTML;
+}
+
+
+function updateCartCount() {
+    const countElement = document.getElementById('cart-count');
+
+    let totalItems = 0;
+    for (let i = 0; i < basket.length; i++) {
+        totalItems += basket[i].amount;
+    }
+
+    countElement.textContent = totalItems;
+}
+
+document.addEventListener("keydown", function (event) {
+	if (event.key === "Escape") {
+		closeCartModal();
+	}
+});
+
+document.addEventListener("click", function (event) {
+	const modal = document.getElementById("cart-modal");
+	if (event.target === modal) {
+		closeCartModal();
+	}
+});
 
 
 function init(){

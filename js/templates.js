@@ -3,7 +3,7 @@ function getRestaurantInfoTemplate(name, rating, deliveryCost){
     const stars = getStarRating(rating);
 
     return `
-        <h2>${name}</h2>
+        <h2 class="restaurant_name">${name}</h2>
         <div class="rating">
             ${stars} <span class="rating-number">(${rating})</span>
         </div>
@@ -32,13 +32,13 @@ function getDishTemplate(name, description, price, index) {
                             <p class="dish_description">${description}</p>
                             <p class="dish_price">${price.toFixed(2)} €</p>
                     </div>
-                    <button class="add_btn" onclick="addToCart(${index})">+</button>
+                    <button class="add_btn" onclick="addToCart(${index})">Hinzufügen</button>
                 </div>
             `;
 }
 
 
-function getCartItemTempalate(dishIndex, amount) {
+function getCartItemTemplate(dishIndex, amount) {
     const dish = menu[dishIndex]; //Hole das Gericht aus dem Menu
     const itemTotal = dish.price * amount; //Berechne zwischensumme
 
@@ -49,10 +49,10 @@ function getCartItemTempalate(dishIndex, amount) {
                         <p class="cart_item_price">${dish.price.toFixed(2)} €</p>
                     </div>
                     <div class="cart_item_controls">
-                        <button onclick="decreaseAmount(${dishIndex})">-</button>
-                        <span class="amount">${amount}</span>
-                        <button onclick="increaseAmount(${dishIndex})">+</button>
-                        <button onclick="removeFromCart(${dishIndex})">🗑</button>
+                        <button class="cursor" onclick="decreaseAmount(${dishIndex})">-</button>
+                        <span class="amount" class="amount">${amount}</span>
+                        <button class="cursor" onclick="increaseAmount(${dishIndex})">+</button>
+                        <button class="cursor" onclick="removeFromCart(${dishIndex})">🗑</button>
                     </div>
                     <p class="cart_item_total">${itemTotal.toFixed(2)} €</p>
                 </div>

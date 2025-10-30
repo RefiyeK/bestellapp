@@ -15,11 +15,10 @@
     <header>
         <section class="container_limit">
             <div class="navi_box">               
-                <img class="logo" src="./assets/Logo/Logo.png" alt="Bestell App Logo">
+                <a href=""><img class="logo" src="./assets/Logo/Logo.png" alt="Bestell App Logo"></a>
                     <nav class="nav_flex">
                         <a class="navi" href="#">Kontakt</a>
                         <a class="navi" href="#">Über Uns</a>
-                        <a class="navi" href="#">Profil</a>
                     </nav>                     
             </div> 
         </section>
@@ -53,20 +52,38 @@
         <section class="container_limit" >
             <div class="footer_flexbox">
                 <a href=""><img class="logo" src="./assets/Logo/Logo.png" alt="Bestell App Logo"></a>
-                    <div class="links">
-                        <a class="link" href="impressum.html">Impressum</a>
-                        <a class="link" href="datenschutz.html">Datenschutz</a>
-                    </div>  
+                    <div class="footer_right">
+                        <div class="links">
+                            <a class="link" href="impressum.html">Impressum</a>
+                            <a class="link" href="datenschutz.html">Datenschutz</a>
+                        </div>  
 
-                    <div class="social_media_group">
-                        <a href="https://facebook.com"><img class="social_media" src="./assets/img/facebook_white.png" alt="Facebook Logo"></a>
-                        <a href="https://instagram.com"><img class="social_media" src="./assets/img/instagram_white.png" alt="Instagram Logo"></a>
-                        <a href="https://x.com"><img class="social_media" src="./assets/img/x-logo-white.png" alt="X Logo"></a>
+                        <div class="social_media_group">
+                            <a href="https://facebook.com"><img class="social_media" src="./assets/img/facebook_white.png" alt="Facebook Logo"></a>
+                            <a href="https://instagram.com"><img class="social_media" src="./assets/img/instagram_white.png" alt="Instagram Logo"></a>
+                            <a href="https://x.com"><img class="social_media" src="./assets/img/x-logo-white.png" alt="X Logo"></a>
+                        </div>
                     </div>
             </div>
         </section>
     </footer>
-    <div id="message_container" class="mesage hidden"></div>
-    <div id="mobileModal" class="modal_hidden"></div>
+        <div id="message-container" class="message_hidden"></div>
+
+  <button class="mobile-cart-button" onclick="openCartModal()">
+    🛒 Warenkorb (<span id="cart-count">0</span>)
+  </button>
+
+  <div id="cart-modal" class="cart-modal hidden">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Warenkorb</h2>
+            <button class="close-modal" onclick="closeCartModal()">X</button>
+            </div>
+            <div id="cart-modal-body">
+            
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
