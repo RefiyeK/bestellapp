@@ -1,0 +1,276 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+}
+.contact {
+  padding: 30px 0;
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contact_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.contact_date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#message {
+  width: 700px;
+  height: 197px;
+  gap: 20px;
+  padding: 0.5rem;
+}
+
+label {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.box {
+  width: 300px;
+  height: 40px;
+  border-color: #9e9b9b;
+}
+
+.shadow {
+  box-shadow: 1px 3px 13px #333;
+}
+.btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 5px 30px;
+  height: 40px;
+}
+.btn:hover {
+  background-color: #008000;
+  cursor: pointer;
+  color: #f6f6f6;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message_box {
+  margin-bottom: 24px;
+}
+
+input:invalid,
+textarea:valid {
+  border: 2px solid #3033;
+}
+
+footer {
+  flex-grow: 0;
+}
+
+@media (max-width: 1325px) {
+  .link {
+    font-size: 20px;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .logo {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .container {
+    padding: 0 75px;
+  }
+}
+
+@media (max-width: 980px) {
+  .navbar {
+    height: 110px;
+  }
+  .logo {
+    width: 250px;
+  }
+  .social_media {
+    width: 30px;
+  }
+  .footer_logo {
+    height: 70px;
+  }
+  .footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .links_footer {
+    gap: 10px;
+    display: flex;
+  }
+  .nav_link {
+    display: none;
+  }
+  .burger_menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 850px) {
+  .footer_logo {
+    display: none;
+  }
+  .footer_logo_white {
+    display: block;
+    width: 70px;
+    padding: 0;
+  }
+  .footer_container {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+  .social_media_group {
+    gap: 5px;
+  }
+  .social_media {
+    width: 20px;
+    height: 20px;
+  }
+  .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact_date {
+    width: 100%;
+  }
+
+  .message {
+    width: 100%;
+  }
+
+  #message {
+    width: 100%;
+    height: 125px;
+  }
+
+  .box {
+    width: 100%;
+    height: 40px;
+    border-color: #9e9b9b;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .social_media_group {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    padding-right: 16px;
+  }
+  .social_media {
+    width: 22px;
+    height: 22px;
+  }
+
+  .links_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer_container {
+    padding: 25px;
+  }
+
+  .contact_form {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 430px) {
+  .small_logo {
+    width: 200px;
+  }
+
+  .footer_logo_white {
+    width: 50px;
+  }
+
+  .links_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  p {
+    font-size: 26px;
+  }
+  footer {
+    display: flex;
+    gap: 10px;
+  }
+  .footer_logo {
+    width: 300px;
+  }
+  .logo {
+    width: 200px;
+  }
+
+  .contact_form {
+    padding: 16px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 325px) {
+  .contact_form {
+    padding: 16px;
+    width: 250px;
+  }
+}
